@@ -1,22 +1,15 @@
 import React, { useState } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 
 import privado from "../../assets/images/privado.svg";
 import olho_icone from "../../assets/images/olho.svg";
 import dinheiro from "../../assets/images/dinheiro.svg";
 
-import {
-  Icone,
-  Box,
-  Botao,
-  Detalhe,
-  Saldo
-} from '../UI/index'
+import { Icone, Box, Botao, Saldo, Detalhe } from "../../Components/UI";
 
-// how to get presets on styled components
 const IconeMargin = styled(Icone)`
   margin-top: 2px;
-`
+`;
 
 const Conta = () => {
   const [toggleState, untoggle] = useState(true);
@@ -35,12 +28,12 @@ const Conta = () => {
         </span>
         {toggleState ? (
           <Saldo>
-            <Detalhe >R$</Detalhe> 0,00{" "}
+            <Detalhe>R$</Detalhe> 0,00{" "}
           </Saldo>
         ) : null}
       </div>
 
-      <Botao className="btn" onClick={toggleHandler}>
+      <Botao onClick={toggleHandler}>
         <IconeMargin
           src={toggleState ? privado : olho_icone}
           alt="Privacidade do Saldo"
